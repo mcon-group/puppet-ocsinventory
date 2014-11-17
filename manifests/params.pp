@@ -32,6 +32,7 @@ class ocsinventory::params {
       ]
 
       $pkg_list_server    = [
+        'ocsinventory',
         'ocsinventory-reports',
         'ocsinventory-server',
       ]
