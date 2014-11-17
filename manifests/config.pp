@@ -41,7 +41,7 @@ class ocsinventory::config {
 
   if $::ocsinventory::server {
     file {
-      $::ocsinventory::config_dir_server:
+      "${::ocsinventory::config_dir}/ocsinventory-server":
         ensure  => directory,
         mode    => $::ocsinventory::config_dir_mode,
         purge   => $::ocsinventory::config_purge,
