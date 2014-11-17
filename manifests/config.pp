@@ -31,12 +31,12 @@ class ocsinventory::config {
       }
     }
 
-     if $::osfamily == 'Debian' {
-       file { '/etc/default/ocsinventory-agent':
-         ensure  => present,
-         content => template('ocsinventory/agent.default.erb');
-       }
-     }
+    if $::osfamily == 'Debian' {
+      file { '/etc/default/ocsinventory-agent':
+        ensure  => present,
+        content => template('ocsinventory/agent.default.erb');
+      }
+    }
   }
 
   if $::ocsinventory::server {
