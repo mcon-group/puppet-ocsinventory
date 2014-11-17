@@ -21,7 +21,8 @@ class ocsinventory::params {
       $config_file_mode   = '0644'
       $config_group       = 'root'
       $config_user        = 'root'
-      $log_dir            = undef
+      $log_dir_agent      = '/var/log/ocsinventory-agent'
+      $log_dir_server     = '/var/log/ocsinventory-server'
       $pkg_deps           = undef
 
       $pkg_list_agent     = [

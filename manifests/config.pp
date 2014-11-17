@@ -8,20 +8,20 @@ class ocsinventory::config {
     require => Class['::ocsinventory::install'],
   }
 
-  file {
-    $::ocsinventory::config_dir:
-      ensure  => directory,
-      mode    => $::ocsinventory::config_dir_mode,
-      purge   => $::ocsinventory::config_purge,
-      recurse => $::ocsinventory::config_dir_recurse;
-
-    $::ocsinventory::log_dir:
-      ensure => directory,
+  file { $::ocsinventory::config_dir:
+    ensure  => directory,
+    mode    => $::ocsinventory::config_dir_mode,
+    purge   => $::ocsinventory::config_purge,
+    recurse => $::ocsinventory::config_dir_recurse;
   }
 
   if $::ocsinventory::agent {
-    file { "${::ocsinventory::config_dir}/ocsinventory-agent.cfg":
-      ensure => present;
+    file {
+      "${::ocsinventory::config_dir}/ocsinventory-agent.cfg":
+        ensure => present;
+
+      $::ocsinventory::log_dir_agent:
+        ensure => directory;
     }
 
     if $::osfamily == 'RedHat' {
@@ -54,7 +54,10 @@ class ocsinventory::config {
         recurse => $::ocsinventory::config_dir_recurse;
 
       "${::ocsinventory::config_dir_server}/htpasswd":
-        ensure => present,
+        ensure => present;
+
+      $::ocsinventory::log_dir_server:
+        ensure => directory;
     }
   }
 }
