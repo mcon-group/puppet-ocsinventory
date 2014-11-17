@@ -75,10 +75,15 @@ class ocsinventory (
   $config_purge       = $::ocsinventory::params::config_purge,
   $config_user        = $::ocsinventory::params::config_user,
   $log_dir            = $::ocsinventory::params::log_dir,
+  $log_dir_agent      = $::ocsinventory::params::log_dir_agent,
+  $log_dir_server     = $::ocsinventory::params::log_dir_server,
   $manage_repo        = $::ocsinventory::params::manage_repo,
+  $pkg_agent_ensure   = $::ocsinventory::params::pkg_agent_ensure,
   $pkg_deps           = $::ocsinventory::params::pkg_deps,
   $pkg_ensure         = $::ocsinventory::params::pkg_ensure,
-  $pkg_list           = $::ocsinventory::params::pkg_list,
+  $pkg_list_agent     = $::ocsinventory::params::pkg_list_agent,
+  $pkg_list_server    = $::ocsinventory::params::pkg_list_server,
+  $pkg_server_ensure  = $::ocsinventory::params::pkg_server_ensure,
   $server             = $::ocsinventory::params::server,
 ) inherits ocsinventory::params {
   class { 'ocsinventory::preinstall': } ->
