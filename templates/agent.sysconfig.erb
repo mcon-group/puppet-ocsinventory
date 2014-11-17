@@ -10,18 +10,16 @@
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
 
 # Mode, change to "cron" to activate
-OCSMODE[0]=cron
-
+OCSMODE[0]=<%= @agent_ocs_mode %>
 
 # can be used to override the ocsinventory-agent.cfg setup.
-OCSSERVER[0]=192.168.71.25
-
+OCSSERVER[0]=<%= @agent_ocs_server %>
 
 # corresponds with --local=/var/lib/ocsinventory-agent
 # OCSSERVER[0]=local
 
 # Wait before inventory
-OCSPAUSE[0]=100
+OCSPAUSE[0]=<%= @agent_ocs_pause %>
 
 # Administrative TAG (optional, must be filed before first inventory)
-OCSTAG[0]=
+OCSTAG[0]=<%= @agent_ocs_tag %>
