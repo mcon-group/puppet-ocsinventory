@@ -1,0 +1,50 @@
+{
+  "name": "arioch-ocsinventory",
+  "version": "0.0.0",
+  "author": "Tom De Vylder",
+  "summary": "",
+  "license": "Apache License, Version 2.0",
+  "source": "",
+  "project_page": "",
+  "issues_url": "",
+  "description": "",
+  "tags": [
+  
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "6.0",
+        "6.1",
+        "6.2",
+        "6.3",
+        "6.4",
+        "6.5",
+        "7.0"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6.0",
+        "6.1",
+        "6.2",
+        "6.3",
+        "6.4",
+        "6.5",
+        "7"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.0.0"
+    },
+    {
+      "name": "puppetlabs/concat",
+      "version_requirement": ">= 1.0.2"
+    }
+  ]
+}
