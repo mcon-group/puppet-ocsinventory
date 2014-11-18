@@ -1,6 +1,6 @@
 {
   "name": "arioch-ocsinventory",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Tom De Vylder",
   "summary": "",
   "license": "Apache License, Version 2.0",
@@ -15,12 +15,6 @@
     {
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
-        "6.0",
-        "6.1",
-        "6.2",
-        "6.3",
-        "6.4",
-        "6.5",
         "7.0"
       ]
     },
