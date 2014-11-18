@@ -58,6 +58,14 @@ class ocsinventory::config {
 
       $::ocsinventory::log_dir_server:
         ensure => directory;
+
+      "${::ocsinventory::config_dir}/apache2-reports.conf.example":
+        ensure  => present,
+        content => template("ocsinventory/reports.${::osfamily}.conf.erb");
+
+      "${::ocsinventory::config_dir}/apache2-server.conf.example":
+        ensure  => present,
+        content => template("ocsinventory/server.${::osfamily}.conf.erb");
     }
   }
 }
