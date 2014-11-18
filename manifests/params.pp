@@ -6,7 +6,6 @@ class ocsinventory::params {
   $agent_ocs_pause   = 100
   $agent_ocs_server  = undef
   $agent_ocs_tag     = undef
-
   $manage_vhost      = false
   $pkg_agent_ensure  = present
   $pkg_server_ensure = present
@@ -24,13 +23,13 @@ class ocsinventory::params {
       $log_dir_server     = '/var/log/ocsinventory-server'
       $pkg_deps           = undef
 
-      $pkg_list_agent     = [
+      $pkg_list_agent = [
         'ocsinventory-agent',
         'ocsinventory-ipdiscover',
         'perl-LWP-Protocol-https',
       ]
 
-      $pkg_list_server    = [
+      $pkg_list_server = [
         'ocsinventory',
         'ocsinventory-reports',
         'ocsinventory-server',
