@@ -41,9 +41,6 @@
 # $log_dir::              Specify directory containing log files.
 #                         Default: operating system specific.
 #
-# $manage_vhost::         Whether or not to manage Apache vhosts.
-#                         Default: false.
-#
 # $pkg_deps::             Any dependencies that need to be resolved before
 #                         installing the main package.
 #                         Default: operating system specific.
