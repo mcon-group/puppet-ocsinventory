@@ -53,7 +53,7 @@ class ocsinventory::config {
         purge   => $::ocsinventory::config_purge,
         recurse => $::ocsinventory::config_dir_recurse;
 
-      "${::ocsinventory::config_dir_server}/htpasswd":
+      "${::ocsinventory::config_dir}/ocsinventory-server/htpasswd":
         ensure => present;
 
       $::ocsinventory::log_dir_server:
