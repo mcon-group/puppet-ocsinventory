@@ -1,4 +1,4 @@
-# Puppet ocsinventory
+# Puppet OCSInventory
 
 ## Build status
 
@@ -7,48 +7,42 @@
 
 ## Requirements
 
-* [concat](https://github.com/ripienaar/puppet-concat)
-* [stdlib](https://github.com/puppetlabs/puppetlabs-stdlib)
-
-Debian only:
-
-* Puppetlabs [apt module](https://github.com/puppetlabs/puppetlabs-apt) or
-* Camptocamp [apt module](https://github.com/camptocamp/puppet-apt)
+* OCSInventory packages:
+  can be obtained from Fedora EPEL.
 
 
 ## Tested on...
 
-* Debian 5 (Lenny)
-* Debian 6 (Squeeze)
-* CentOS 5
-* CentOS 6
+* CentOS 7
 
 
 ## Example usage
 
-### Install ocsinventory
+### Install OCSInventory
 
     node /box/ {
       include ocsinventory
     }
 
-### Configure ocsinventory
+### Configure OCSInventory
 
     node /box/ {
       class { 'ocsinventory':
-        pkg_ensure     => latest,
-        service_ensure => running,
+        agent_ocs_mode   => 'cron',
+        agent_ocs_pause  => '100',
+        agent_ocs_server => 'localhost',
+        agent_ocs_tag    => undef,
       }
     }
 
-### Manage repository
+### Configure OCSInventory server
 
     node /box/ {
       class { 'ocsinventory':
-        manage_repo => true,
+        agent  => true, # default
+        server => true,
       }
     }
-
 
 ## Contributing
 
@@ -58,4 +52,3 @@ Debian only:
 * Commit your changes (`git commit -am 'Added some feature'`)
 * Push to the branch (`git push origin my-new-feature`)
 * Create new Pull Request
-
