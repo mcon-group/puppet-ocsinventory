@@ -7,7 +7,6 @@ class ocsinventory::params {
   $agent_ocs_server  = undef
   $agent_ocs_tag     = undef
 
-  $manage_repo       = false
   $manage_vhost      = false
   $pkg_agent_ensure  = present
   $pkg_server_ensure = present
