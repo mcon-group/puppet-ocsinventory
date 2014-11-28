@@ -25,7 +25,6 @@ class ocsinventory::params {
       $pkg_list_agent = [
         'ocsinventory-agent',
         'ocsinventory-ipdiscover',
-        'perl-LWP-Protocol-https',
       ]
 
       $pkg_list_server = [
