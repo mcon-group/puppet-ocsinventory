@@ -38,7 +38,10 @@
 # $config_user::          Posix user for configuration files.
 #                         Default: operating system specific.
 #
-# $log_dir::              Specify directory containing log files.
+# $log_dir_agent          Specify directory containing log files.
+#                         Default: operating system specific.
+#
+# $log_dir_server         Specify directory containing log files.
 #                         Default: operating system specific.
 #
 # $pkg_deps::             Any dependencies that need to be resolved before
@@ -68,7 +71,6 @@ class ocsinventory (
   $config_group       = $::ocsinventory::params::config_group,
   $config_purge       = $::ocsinventory::params::config_purge,
   $config_user        = $::ocsinventory::params::config_user,
-  $log_dir            = $::ocsinventory::params::log_dir,
   $log_dir_agent      = $::ocsinventory::params::log_dir_agent,
   $log_dir_server     = $::ocsinventory::params::log_dir_server,
   $pkg_agent_ensure   = $::ocsinventory::params::pkg_agent_ensure,
