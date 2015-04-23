@@ -1,6 +1,12 @@
 # == Class ocsinventory::config
 #
-class ocsinventory::config {
+class ocsinventory::config (
+  $agent_ocs_mode   = $::ocsinventory::agent_ocs_mode,
+  $agent_ocs_pause  = $::ocsinventory::agent_ocs_pause,
+  $agent_ocs_server = $::ocsinventory::agent_ocs_server,
+  $agent_ocs_tag    = $::ocsinventory::agent_ocs_tag,
+)
+{
   File {
     group   => $::ocsinventory::config_group,
     mode    => $::ocsinventory::config_file_mode,

@@ -81,7 +81,7 @@ class ocsinventory (
 ) inherits ocsinventory::params {
   class { 'ocsinventory::install': } ->
   class { 'ocsinventory::config': } ->
-  Class [ 'ocsinventory' ]
+  Class['ocsinventory']
 
   validate_absolute_path ($config_dir)
 }
