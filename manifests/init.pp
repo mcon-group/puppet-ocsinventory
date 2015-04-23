@@ -86,5 +86,24 @@ class ocsinventory (
   Class['ocsinventory']
 
   validate_absolute_path ($config_dir)
+  validate_absolute_path ($log_dir_agent)
+  validate_absolute_path ($log_dir_server)
+  validate_bool ($agent)
+  validate_bool ($config_dir_recurse)
+  validate_bool ($server)
+  validate_numeric ($agent_ocs_pause)
+  validate_numeric ($config_dir_mode)
+  validate_numeric ($config_file_mode)
+  validate_string ($agent_ocs_mode)
+  validate_string ($config_group)
+  validate_string ($config_user)
+
+  if $agent_ocs_server {
+    validate_string ($agent_ocs_server)
+  }
+
+  if $agent_ocs_tag {
+    validate_string ($agent_ocs_tag)
+  }
 }
 

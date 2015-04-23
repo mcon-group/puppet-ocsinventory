@@ -42,10 +42,10 @@ describe 'ocsinventory', :type => :class do
   end
 
   describe 'with parameter: agent_ocs_pause' do
-    let (:params) { { :agent_ocs_pause => '_VALUE_' } }
+    let (:params) { { :agent_ocs_pause => '123' } }
 
     it { should contain_file('/etc/sysconfig/ocsinventory-agent').with(
-        'content' => /OCSPAUSE.*_VALUE_/
+        'content' => /OCSPAUSE.*123/
       )
     }
   end
@@ -97,23 +97,23 @@ describe 'ocsinventory', :type => :class do
     let (:params) {
       {
         :config_dir => '/_VALUE_',
-        :config_dir_recurse => '_VALUE_'
+        :config_dir_recurse => true
       }
     }
 
     it {
       should contain_file('/_VALUE_').with(
-        'recurse' => '_VALUE_'
+        'recurse' => true
       )
     }
   end
 
   describe 'with parameter: config_file_mode' do
-    let (:params) { { :config_file_mode => '_VALUE_' } }
+    let (:params) { { :config_file_mode => '0777' } }
 
     it {
       should contain_file('/etc/sysconfig/ocsinventory-agent').with(
-        'mode' => '_VALUE_'
+        'mode' => '0777'
       )
     }
   end
