@@ -2,19 +2,20 @@
 
 ## Build status
 
-[![Build Status](https://travis-ci.org/arioch/puppet-ocsinventory.png?branch=master)](https://travis-ci.org/arioch/puppet-ocsinventory)
+# [![Build Status](https://travis-ci.org/arioch/puppet-ocsinventory.png?branch=master)](https://travis-ci.org/arioch/puppet-ocsinventory)
 
 
 ## Requirements
 
 * OCSInventory packages:
   can be obtained from Fedora EPEL.
+* MySQL and apache are not managed by this module
 
 
 ## Tested on...
 
 * CentOS 7
-
+* Scientific Linux 6
 
 ## Example usage
 
