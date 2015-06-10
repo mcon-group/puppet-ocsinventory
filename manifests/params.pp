@@ -21,7 +21,7 @@ class ocsinventory::params {
       $log_dir_agent      = '/var/log/ocsinventory-agent'
       $log_dir_server     = '/var/log/ocsinventory-server'
       $pkg_deps           = undef
-      
+
       case $::lsbmajdistrelease {
         '7': {
           $pkg_list_agent = [
@@ -42,11 +42,12 @@ class ocsinventory::params {
           ]
         }
       }
-        $pkg_list_server = [
-          'ocsinventory',
-          'ocsinventory-reports',
-          'ocsinventory-server',
-        ]
+
+      $pkg_list_server = [
+        'ocsinventory',
+        'ocsinventory-reports',
+        'ocsinventory-server',
+      ]
     }
 
     default: {

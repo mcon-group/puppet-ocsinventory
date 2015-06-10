@@ -23,7 +23,7 @@ class ocsinventory::config (
   if $::ocsinventory::agent {
     file {
       "${::ocsinventory::config_dir}/ocsinventory-agent.cfg":
-        ensure => present;
+        ensure => file;
 
       $::ocsinventory::log_dir_agent:
         ensure => directory;
@@ -31,14 +31,14 @@ class ocsinventory::config (
 
     if $::osfamily == 'RedHat' {
       file { '/etc/sysconfig/ocsinventory-agent':
-        ensure  => present,
+        ensure  => file,
         content => template('ocsinventory/agent.sysconfig.erb');
       }
     }
 
     if $::osfamily == 'Debian' {
       file { '/etc/default/ocsinventory-agent':
-        ensure  => present,
+        ensure  => file,
         content => template('ocsinventory/agent.default.erb');
       }
     }
@@ -59,17 +59,17 @@ class ocsinventory::config (
         recurse => $::ocsinventory::config_dir_recurse;
 
       "${::ocsinventory::config_dir}/ocsinventory-server/htpasswd":
-        ensure => present;
+        ensure => file;
 
       $::ocsinventory::log_dir_server:
         ensure => directory;
 
       "${::ocsinventory::config_dir}/apache2-reports.conf.example":
-        ensure  => present,
+        ensure  => file,
         content => template("ocsinventory/reports.${::osfamily}.conf.erb");
 
       "${::ocsinventory::config_dir}/apache2-server.conf.example":
-        ensure  => present,
+        ensure  => file,
         content => template("ocsinventory/server.${::osfamily}.conf.erb");
     }
   }

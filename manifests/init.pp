@@ -80,10 +80,10 @@ class ocsinventory (
   $pkg_list_server    = $::ocsinventory::params::pkg_list_server,
   $pkg_server_ensure  = $::ocsinventory::params::pkg_server_ensure,
   $server             = $::ocsinventory::params::server,
-) inherits ocsinventory::params {
-  class { 'ocsinventory::install': } ->
-  class { 'ocsinventory::config': } ->
-  Class['ocsinventory']
+) inherits ::ocsinventory::params {
+  class { '::ocsinventory::install': } ->
+  class { '::ocsinventory::config': } ->
+  Class['::ocsinventory']
 
   validate_absolute_path ($config_dir)
   validate_absolute_path ($log_dir_agent)
