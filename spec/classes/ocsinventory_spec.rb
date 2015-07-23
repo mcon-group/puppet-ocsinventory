@@ -27,7 +27,7 @@ describe 'ocsinventory', :type => :class do
       )
 
       should contain_file('/etc/ocsinventory/ocsinventory-agent.cfg').with(
-        'ensure' => 'present'
+        'ensure' => 'file'
       )
     }
   end
