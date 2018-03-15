@@ -8,7 +8,8 @@
 ## Requirements
 
 * OCSInventory packages:
-  can be obtained from Fedora EPEL.
+  can be obtained from ICS directly.
+  https://www.ocsinventory-ng.org/en/rpm-repository-is-available-for-rhelcentosfedora/
 * MySQL and apache are not managed by this module
 
 
